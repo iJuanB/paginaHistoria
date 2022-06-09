@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.98.0">
+  <title>Construcciones de poligonos</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
+
+  <link href="css/bootstrap.min.css"
+    rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(22, 21, 21, 0.089);
+      border: solid rgba(2, 2, 2, 0.15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(27, 27, 27, 0.075), inset 0 .125em .5em rgba(31, 31, 31, 0.068);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg" style="background:rgba(0, 0, 0, 0.925)">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="color:aliceblue">Construcciones de polígonos</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="index.html"
+              style="color:aliceblue"> Home</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="py-5 text-center container" style="background: rgba(0, 0, 0, 0.925)">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-dark" style="color:rgba(245, 245, 245, 0.966)">Construcciones de polígonos con regla y compas</h1>
+          <p class="lead text-muted-light" style="color:rgba(255, 255, 255, 0.884)">En esta sección de la página, vas a poner a prueba tus habilidades con la regla y el compás. ¡Euclides estaría orgulloso de ti! </p>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+              aria-expanded="false" aria-controls="collapseExample">
+              Reglas
+            </a>
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              1. Solamente puedes usar las herramientas básicas de Geogebra.</br> 
+              2. No puedes transportar medidas, de manera convencional tendrás que ingeniártelas.</br> 
+              3. Para una mejor experiencia desactiva la rejilla (Grid) y los ejes (axes), dando clic derecho sobre el tablero.</br> 
+              4. Te recomiendo primero intentarlo por tu cuenta, luego puedes ver el paso a paso sí estas perdido.  </br> 
+              5. El progreso se borra recargando la página, ¡Cuidado!.</br>
+              6. No existe una única forma de hacer las construcciones, prueba todo lo que se te ocurra.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="album py-5" style="background:rgba(80, 79, 79, 0.034)">
+      <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col">
+            <div class="card shadow-sm">
+
+              <img src="images/3l.png" alt="Polígono de tres lados"
+                title="Polígono de tres lados" class="img-rounded" />
+
+
+              <div class="card-body">
+                <p class="card-text">Polígono de Tres lados (Triángulo). </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop1">
+                      Construir
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Construir</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion" style="border: 1ch;">
+                              <iframe style='display:none' id='frame' width='600' height='700' frameborder='0'></iframe>
+                              <meta name=viewport content="width=device-width,initial-scale=1">
+                              <meta charset="utf-8" />
+                              <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+                              <div id="ggb-element"></div>
+                              <script>
+                                var ggbApp = new GGBApplet({ "appName": "geometry", "width": 700, "height": 800, "showToolBar": true, "showAlgebraInput": true, "showMenuBar": true }, true);
+                                window.addEventListener("load", function () {
+                                  ggbApp.inject('ggb-element');
+                                });
+                              </script>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Button trigger modal 2-->
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop2">
+                      Revisar
+                    </button>
+
+                    <!-- Modal 2-->
+                    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Revisar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion">
+                              <iframe id='frame' width='700' height='800' frameborder='0'
+                                src="https://www.geogebra.org/geometry/wdtd6kdr"></iframe>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="images/4l.png" alt="Polígono de cuatro lados"
+                title="Polígono de cuatro lados" class="img-rounded" />
+              <div class="card-body">
+                <p class="card-text">Polígono de cuatro lados (Cuadrado).</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop1">
+                      Construir
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Construir</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion" style="border: 1ch;">
+                              <iframe style='display:none' id='frame' width='600' height='700' frameborder='0'></iframe>
+                              <meta name=viewport content="width=device-width,initial-scale=1">
+                              <meta charset="utf-8" />
+                              <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+                              <div id="ggb-element"></div>
+                              <script>
+                                var ggbApp = new GGBApplet({ "appName": "geometry", "width": 700, "height": 800, "showToolBar": true, "showAlgebraInput": true, "showMenuBar": true }, true);
+                                window.addEventListener("load", function () {
+                                  ggbApp.inject('ggb-element');
+                                });
+                              </script>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Button trigger modal 2-->
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop3">
+                      Revisar
+                    </button>
+
+                    <!-- Modal 2-->
+                    <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Revisar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion">
+                              <iframe id='frame' width='700' height='800' frameborder='0'
+                                src="https://www.geogebra.org/geometry/u4bafptz"></iframe>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="images/5l.png" alt="Polígono de cinco lados"
+                title="Polígono de cinco lados" class="img-rounded" />
+              <div class="card-body">
+                <p class="card-text">Polígono de cinco lados (Pentágono).</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop1">
+                      Construir
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Construir</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion" style="border: 1ch;">
+                              <iframe style='display:none' id='frame' width='600' height='700' frameborder='0'></iframe>
+                              <meta name=viewport content="width=device-width,initial-scale=1">
+                              <meta charset="utf-8" />
+                              <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+                              <div id="ggb-element"></div>
+                              <script>
+                                var ggbApp = new GGBApplet({ "appName": "geometry", "width": 700, "height": 800, "showToolBar": true, "showAlgebraInput": true, "showMenuBar": true }, true);
+                                window.addEventListener("load", function () {
+                                  ggbApp.inject('ggb-element');
+                                });
+                              </script>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Button trigger modal 2-->
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop4">
+                      Revisar
+                    </button>
+
+                    <!-- Modal 2-->
+                    <div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Revisar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion">
+                              <iframe id='frame' width='700' height='800' frameborder='0'
+                                src="https://www.geogebra.org/geometry/zxy3edhm"></iframe>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="images/6l.png" alt="Polígono de seis lados"
+                title="Polígono de seis lados" class="img-thumbnail" />
+              <div class="card-body">
+                <p class="card-text">Polígono de seis lados (Hexágono).</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop1">
+                      Construir
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Construir</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion" style="border: 1ch;">
+                              <iframe style='display:none' id='frame' width='600' height='700' frameborder='0'></iframe>
+                              <meta name=viewport content="width=device-width,initial-scale=1">
+                              <meta charset="utf-8" />
+                              <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+                              <div id="ggb-element"></div>
+                              <script>
+                                var ggbApp = new GGBApplet({ "appName": "geometry", "width": 700, "height": 800, "showToolBar": true, "showAlgebraInput": true, "showMenuBar": true }, true);
+                                window.addEventListener("load", function () {
+                                  ggbApp.inject('ggb-element');
+                                });
+                              </script>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Button trigger modal 2-->
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop5">
+                      Revisar
+                    </button>
+
+                    <!-- Modal 2-->
+                    <div class="modal fade" id="staticBackdrop5" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Revisar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion">
+                              <iframe id='frame' width='700' height='800' frameborder='0'
+                                src="https://www.geogebra.org/geometry/bpmbq2nd"></iframe>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="images/8l.png" alt="Polígono de ocho lados"
+                title="Polígono de ocho lados" class="img-thumbnail" />
+              <div class="card-body">
+                <p class="card-text">Polígono de ocho lados (Octágono).</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop1">
+                      Construir
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Construir</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion" style="border: 1ch;">
+                              <iframe style='display:none' id='frame' width='600' height='700' frameborder='0'></iframe>
+                              <meta name=viewport content="width=device-width,initial-scale=1">
+                              <meta charset="utf-8" />
+                              <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+                              <div id="ggb-element"></div>
+                              <script>
+                                var ggbApp = new GGBApplet({ "appName": "geometry", "width": 700, "height": 800, "showToolBar": true, "showAlgebraInput": true, "showMenuBar": true }, true);
+                                window.addEventListener("load", function () {
+                                  ggbApp.inject('ggb-element');
+                                });
+                              </script>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Button trigger modal 2-->
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop6">
+                      Revisar
+                    </button>
+
+                    <!-- Modal 2-->
+                    <div class="modal fade" id="staticBackdrop6" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Revisar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion">
+                              <iframe id='frame' width='700' height='800' frameborder='0'
+                                src="https://www.geogebra.org/geometry/mthbkzyb"></iframe>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="images/9l.png" alt="Polígono de nueve lados"
+                title="Polígono de nueve lados" class="img-thumbnail" />
+              <div class="card-body">
+                <p class="card-text">Polígono de nueve lados (Eneágono).</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop1">
+                      Construir
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Construir</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion" style="border: 1ch;">
+                              <iframe style='display:none' id='frame' width='600' height='700' frameborder='0'></iframe>
+                              <meta name=viewport content="width=device-width,initial-scale=1">
+                              <meta charset="utf-8" />
+                              <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+                              <div id="ggb-element"></div>
+                              <script>
+                                var ggbApp = new GGBApplet({ "appName": "geometry", "width": 700, "height": 800, "showToolBar": true, "showAlgebraInput": true, "showMenuBar": true }, true);
+                                window.addEventListener("load", function () {
+                                  ggbApp.inject('ggb-element');
+                                });
+                              </script>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Button trigger modal 2-->
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop7">
+                      Revisar
+                    </button>
+
+                    <!-- Modal 2-->
+                    <div class="modal fade" id="staticBackdrop7" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Revisar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion">
+                              <iframe id='frame' width='700' height='800' frameborder='0'
+                                src="https://www.geogebra.org/geometry/puxfdz87"></iframe>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="images/10l.png" alt="Polígono de diez lados"
+                title="Polígono de diez lados" class="img-thumbnail" />
+              <div class="card-body">
+                <p class="card-text">Polígono de diez lados (Decágono).</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop1">
+                      Construir
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Construir</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion" style="border: 1ch;">
+                              <iframe style='display:none' id='frame' width='600' height='700' frameborder='0'></iframe>
+                              <meta name=viewport content="width=device-width,initial-scale=1">
+                              <meta charset="utf-8" />
+                              <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+                              <div id="ggb-element"></div>
+                              <script>
+                                var ggbApp = new GGBApplet({ "appName": "geometry", "width": 700, "height": 800, "showToolBar": true, "showAlgebraInput": true, "showMenuBar": true }, true);
+                                window.addEventListener("load", function () {
+                                  ggbApp.inject('ggb-element');
+                                });
+                              </script>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Button trigger modal 2-->
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop8">
+                      Revisar
+                    </button>
+
+                    <!-- Modal 2-->
+                    <div class="modal fade" id="staticBackdrop8" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Revisar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion">
+                              <iframe id='frame' width='700' height='800' frameborder='0'
+                                src="https://www.geogebra.org/geometry/eth97gfh"></iframe>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="images/11l.png" alt="Polígono de once lados"
+                title="Polígono de once lados" class="img-thumbnail" />
+              <div class="card-body">
+                <p class="card-text">Polígono de once lados (Endecágono).</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop1">
+                      Construir
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Construir</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion" style="border: 1ch;">
+                              <iframe style='display:none' id='frame' width='600' height='700' frameborder='0'></iframe>
+                              <meta name=viewport content="width=device-width,initial-scale=1">
+                              <meta charset="utf-8" />
+                              <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+                              <div id="ggb-element"></div>
+                              <script>
+                                var ggbApp = new GGBApplet({ "appName": "geometry", "width": 700, "height": 800, "showToolBar": true, "showAlgebraInput": true, "showMenuBar": true }, true);
+                                window.addEventListener("load", function () {
+                                  ggbApp.inject('ggb-element');
+                                });
+                              </script>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Button trigger modal 2-->
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop9">
+                      Revisar
+                    </button>
+
+                    <!-- Modal 2-->
+                    <div class="modal fade" id="staticBackdrop9" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Revisar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion">
+                              <iframe id='frame' width='700' height='800' frameborder='0'
+                                src="https://www.geogebra.org/geometry/syqcrkfq"></iframe>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="images/17l.png" alt="Polígono de diecisiete lados"
+                title="Polígono de diecisiete lados" class="img-thumbnail" />
+              <div class="card-body">
+                <p class="card-text">Polígono de diecisiete lados (Heptadecágono).</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop1">
+                      Construir
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Construir</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion" style="border: 1ch;">
+                              <iframe style='display:none' id='frame' width='600' height='700' frameborder='0'></iframe>
+                              <meta name=viewport content="width=device-width,initial-scale=1">
+                              <meta charset="utf-8" />
+                              <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+                              <div id="ggb-element"></div>
+                              <script>
+                                var ggbApp = new GGBApplet({ "appName": "geometry", "width": 700, "height": 800, "showToolBar": true, "showAlgebraInput": true, "showMenuBar": true }, true);
+                                window.addEventListener("load", function () {
+                                  ggbApp.inject('ggb-element');
+                                });
+                              </script>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Button trigger modal 2-->
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop10">
+                      Revisar
+                    </button>
+
+                    <!-- Modal 2-->
+                    <div class="modal fade" id="staticBackdrop10" data-bs-backdrop="static" data-bs-keyboard="false"
+                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Revisar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body center-block">
+                            <div class="marco_construccion">
+                              <iframe id='frame' width='700' height='800' frameborder='0'
+                                src="https://www.geogebra.org/geometry/cxejrm75"></iframe>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="text-muted py-5">
+    <div class="container">
+      <p class="float-end mb-1">
+        <a href="#">Back to top</a>
+      </p>
+  </footer>
+
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="js/jquery/jquery.js"></script>
+
+  <script type="text/javascript" src="js/script.js"></script>
+
+  <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+
+  <script type="text/javascript" src="js/nivo-lightbox/nivo-lightbox.min.js"></script>
+
+  <script type="text/javascript" src="js/owl-carousel/owl.carousel.min.js"></script>
+
+
+
+  <script type="text/javascript" src="js/jquery-easing/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="js/wow/wow.min.js"></script>
+
+
+</body>
+
+</html>
